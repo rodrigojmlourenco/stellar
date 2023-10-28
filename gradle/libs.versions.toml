@@ -29,6 +29,7 @@ androidxWindowManager = "1.1.0"
 androidxWork = "2.9.0-rc01"
 coil = "2.4.0"
 gmsPlugin = "4.4.0"
+googleMaterial = "1.10.0"
 googleOss = "17.0.1"
 googleOssPlugin = "0.10.6"
 hilt = "2.48.1"
@@ -94,6 +95,7 @@ androidx-work-testing = { group = "androidx.work", name = "work-testing", versio
 coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 coil-kt-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
+google-android-material = { group = "com.google.android.material", name = "material", version.ref = "googleMaterial" }
 google-oss-licenses = { group = "com.google.android.gms", name = "play-services-oss-licenses", version.ref = "googleOss" }
 google-oss-licenses-plugin = { group = "com.google.android.gms", name = "oss-licenses-plugin", version.ref = "googleOssPlugin" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
@@ -136,3 +138,15 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+# Plugins defined by this project
+stellar-android-application = { id = "stellar.android.application", version = "unspecified" }
+stellar-android-application-compose = { id = "stellar.android.application.compose", version = "unspecified" }
+stellar-android-application-jacoco = { id = "stellar.android.application.jacoco", version = "unspecified" }
+stellar-android-library = { id = "stellar.android.library", version = "unspecified" }
+stellar-kotlin-library = { id = "stellar.kotlin.library", version = "unspecified" }
+stellar-android-with-hilt = { id = "stellar.android.with.hilt", version = "unspecified" }
+stellar-android-with-compose = { id = "stellar.android.with.compose", version = "unspecified" }
+stellar-android-with-jacoco = { id = "stellar.android.with.jacoco", version = "unspecified" }
+stellar-android-with-room = { id = "stellar.android.room", version = "unspecified" }
+stellar-with-lint = { id = "stellar.with.lint", version = "unspecified" }

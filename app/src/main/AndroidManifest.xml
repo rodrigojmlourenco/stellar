@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".StargazerApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,5 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Stellar"
         tools:targetApi="31" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

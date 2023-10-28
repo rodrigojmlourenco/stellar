@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google()
         mavenCentral()
@@ -14,5 +15,17 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Stellar"
+
+/**
+ * Allows projects to be called in dependencies like so:
+ * ```
+ * dependencies {
+ *   // type-safe alternative to project(":client")
+ *   implementation projects.client
+ * }
+ * ```
+ */
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 include(":app")
  
