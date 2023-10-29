@@ -1,10 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="navy_900">#2a2f4f</color>
+    <color name="navy_800">#353f68</color>
+    <color name="navy_700">#3c4975</color>
+    <color name="navy_600">#445281</color>
+    <color name="navy_500">#4b5a89</color>
+    <color name="navy_400">#657299</color>
+    <color name="navy_300">#7f8baa</color>
+    <color name="navy_200">#a2acc3</color>
+    <color name="navy_100">#c6ccdb</color>
+    <color name="navy_50">#e9ebf0</color>
+
+    <color name="purple_900">#3a2a75</color>
+    <color name="purple_800">#4a3682</color>
+    <color name="purple_700">#533c8a</color>
+    <color name="purple_600">#5e4593</color>
+    <color name="purple_500">#664a99</color>
+    <color name="purple_400">#7b64a3</color>
+    <color name="purple_300">#917fb3</color>
+    <color name="purple_200">#b0a3c9</color>
+    <color name="purple_100">#cfc8de</color>
+    <color name="purple_50">#ece9f1</color>
+
+    <color name="pink_900">#4e1595</color>
+    <color name="pink_800">#6f1ba2</color>
+    <color name="pink_700">#811faa</color>
+    <color name="pink_600">#9424b2</color>
+    <color name="pink_500">#a327b8</color>
+    <color name="pink_400">#b247c4</color>
+    <color name="pink_300">#c069cf</color>
+    <color name="pink_200">#d493df</color>
+    <color name="pink_100">#e5beec</color>
+    <color name="pink_50">#f5e5f7</color>
+
+    <color name="light_pink_900">#7d0b64</color>
+    <color name="light_pink_800">#a40570</color>
+    <color name="light_pink_700">#bb0077</color>
+    <color name="light_pink_600">#d2007f</color>
+    <color name="light_pink_500">#e40084</color>
+    <color name="light_pink_400">#e43799</color>
+    <color name="light_pink_300">#e75eae</color>
+    <color name="light_pink_200">#ec8cc7</color>
+    <color name="light_pink_100">#ec8cc7</color>
+    <color name="light_pink_50">#f4b8df</color>
+
+    <color name="grey_900">#2d2d2d</color>
+    <color name="grey800">#505050</color>
+    <color name="grey700">#707070</color>
+    <color name="grey600">#848484</color>
+    <color name="grey500">#afafaf</color>
+    <color name="grey400">#cccccc</color>
+    <color name="grey300">#ededed</color>
+    <color name="grey200">#f3f3f3</color>
+    <color name="grey100">#f7f7f7</color>
+    <color name="grey50">#fcfcfc</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

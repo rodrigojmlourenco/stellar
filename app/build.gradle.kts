@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.stellar.android.application)
     alias(libs.plugins.stellar.android.application.jacoco)
+    alias(libs.plugins.stellar.android.application.compose)
     alias(libs.plugins.stellar.android.with.hilt)
     id("jacoco")
 }
@@ -35,6 +36,7 @@ dependencies {
     implementation(projects.coreKtx)
     implementation(projects.data)
     implementation(projects.data)
+    implementation(projects.feature.asteroids)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -43,6 +45,8 @@ dependencies {
     implementation(libs.retrofit.kotlin.serialization)
     implementation(libs.retrofit.core)
     implementation(libs.okhttp.logging)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.navigation.fragment)
 
     testImplementation(libs.junit4)
     androidTestImplementation(libs.androidx.test.ext)

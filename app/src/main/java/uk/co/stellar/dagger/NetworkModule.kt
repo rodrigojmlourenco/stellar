@@ -15,8 +15,8 @@ import uk.co.stellar.core.BuildConfigProperties
 class NetworkModule {
 
     @Provides
-    fun provideJson() {
-        Json {
+    fun provideJson(): Json {
+        return Json {
             ignoreUnknownKeys = true
             isLenient = true
         }

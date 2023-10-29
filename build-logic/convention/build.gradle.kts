@@ -69,6 +69,10 @@ gradlePlugin {
             id = "stellar.android.with.room"
             implementationClass = "AndroidRoomConventionPlugin"
         }
+        register("androidLifecycle") {
+            id = "stellar.android.with.lifecycle"
+            implementationClass = "AndroidWithLifecycleConventionPlugin"
+        }
         // endregion Android Add-on
 
         // region Any Add-Ons
