@@ -36,14 +36,4 @@ class HomeActivity : AppCompatActivity() {
         inflater.inflate(R.menu.bottom_app_bar, menu)
         return true
     }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.dashboard -> {
-                Toast.makeText(this, "Search clicked!", Toast.LENGTH_SHORT).show()
-                true
-            }
-            else -> false
-        }
-    }
 }

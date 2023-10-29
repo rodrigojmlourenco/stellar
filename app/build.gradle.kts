@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.stellar.android.application)
     alias(libs.plugins.stellar.android.application.jacoco)
@@ -13,6 +15,9 @@ android {
         applicationId = "uk.co.stellar.stargazer"
         versionCode = 1
         versionName = "1.0.0"
+
+        val key: String = gradleLocalProperties(rootDir).getProperty("nasa_key")
+        buildConfigField("String", "NASA_KEY", "\"$key\"")
     }
 
     buildTypes {
@@ -34,8 +39,9 @@ android {
 
 dependencies {
     implementation(projects.coreKtx)
-    implementation(projects.data)
-    implementation(projects.data)
+    implementation(projects.asteroids.wiring)
+    implementation(projects.asteroids.data)
+    implementation(projects.asteroids.domain)
     implementation(projects.feature.asteroids)
 
     implementation(libs.androidx.core.ktx)

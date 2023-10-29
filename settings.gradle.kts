@@ -29,7 +29,9 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(":app")
 
-include(":data")
-include(":domain")
+include(":asteroids:data")
+include(":asteroids:domain")
 include(":core-ktx")
 include(":feature:asteroids")
+include(":asteroids:wiring")
+include(":test:presentation")

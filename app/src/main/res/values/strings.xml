@@ -2,4 +2,5 @@
     <string name="app_name">Stellar</string>
     <string name="dashboard">Dashboard</string>
     <string name="content_description_dashboard">News feed of today\'s asteroids</string>
+    <string name="oops_something_went_wrong">Ooops! Something went wrong.</string>
 </resources>

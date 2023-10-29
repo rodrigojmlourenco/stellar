@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    implementation(projects.domain)
+    implementation(projects.asteroids.domain)
     implementation(projects.coreKtx)
 
     implementation(libs.retrofit.core)

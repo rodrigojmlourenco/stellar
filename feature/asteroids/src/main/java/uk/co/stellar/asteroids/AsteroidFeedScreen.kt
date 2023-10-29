@@ -23,7 +23,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import kotlinx.coroutines.launch
@@ -35,7 +34,9 @@ fun AsteroidFeedScreen(
 ) {
     val state = viewModel.state.observeAsState()
 
-
+    state.value
+        ?.let { AsteroidFeedLayout(it.asteroids, it.isLoading, it.error) }
+        ?: AsteroidFeedLayout(emptyList(), true, null)
 }
 
 @Composable
@@ -62,9 +63,7 @@ fun AsteroidFeedLayout(
                 // consume insets as scaffold doesn't do it by default
                 modifier = Modifier
                     .consumeWindowInsets(innerPadding)
-                    .fillMaxWidth()
-                    .fillMaxHeight()
-                    .background(Color.Cyan),
+                    .fillMaxWidth(),
                 contentPadding = innerPadding
             ) {
 

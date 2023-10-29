@@ -13,6 +13,9 @@ android {
 }
 
 dependencies {
+    implementation(projects.asteroids.domain)
+    implementation(projects.coreKtx)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.lifecycle.viewModelCompose)
@@ -21,6 +24,12 @@ dependencies {
     implementation(libs.google.android.material)
 
     testImplementation(libs.junit4)
+    testImplementation(libs.androidx.arch.core.testing)
+    testImplementation(libs.mockk)
+    testImplementation(libs.google.truth)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.appmattus.fixture)
+    testImplementation(projects.test.presentation)
 
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)
