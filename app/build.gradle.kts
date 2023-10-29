@@ -32,9 +32,18 @@ android {
 }
 
 dependencies {
+    implementation(projects.coreKtx)
+    implementation(projects.data)
+    implementation(projects.data)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.google.android.material)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.retrofit.kotlin.serialization)
+    implementation(libs.retrofit.core)
+    implementation(libs.okhttp.logging)
+
     testImplementation(libs.junit4)
     androidTestImplementation(libs.androidx.test.ext)
     androidTestImplementation(libs.androidx.test.espresso.core)
