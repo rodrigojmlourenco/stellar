@@ -76,14 +76,98 @@ class AsteroidFeedViewModelTest {
     }
 
     @Test
-    fun `WHEN init THEN has the correct asteroid`() {
+    fun `WHEN init THEN has one asteroid`() {
         val asteroid = fixture<Asteroid>()
         coEvery { repository.getAsteroidsToday() } returns listOf(asteroid)
         initViewModel()
 
         val captured = stateObserver.captured.first()
 
-        Truth.assertThat(captured.asteroids).containsExactly(AsteroidUIModel(asteroid.id, asteroid.name))
+        Truth.assertThat(captured.asteroids).hasSize(1)
+    }
+
+    @Test
+    fun `WHEN init THEN the asteroid has the correct name`() {
+        val asteroid = fixture<Asteroid>()
+        coEvery { repository.getAsteroidsToday() } returns listOf(asteroid)
+        initViewModel()
+
+        val captured = stateObserver.captured.first()
+        val capturedAsteroid = captured.asteroids.first()
+
+        Truth.assertThat(capturedAsteroid.name).isEqualTo(asteroid.name)
+    }
+
+    @Test
+    fun `WHEN init THEN the asteroid the expected size`() {
+        val asteroid = fixture<Asteroid>().copy(diameterInMeters = 33.333333)
+        coEvery { repository.getAsteroidsToday() } returns listOf(asteroid)
+        initViewModel()
+
+        val captured = stateObserver.captured.first()
+        val capturedAsteroid = captured.asteroids.first()
+
+        Truth.assertThat(capturedAsteroid.size).isEqualTo("33.3m")
+    }
+
+    @Test
+    fun `GIVEN the asteroid size is too small to display WHEN init THEN the display size defaults to 1`() {
+        val asteroid = fixture<Asteroid>().copy(diameterInMeters = 1.1)
+        coEvery { repository.getAsteroidsToday() } returns listOf(asteroid)
+        initViewModel()
+
+        val captured = stateObserver.captured.first()
+        val capturedAsteroid = captured.asteroids.first()
+
+        Truth.assertThat(capturedAsteroid.displaySizeInDps).isEqualTo(1)
+    }
+
+    @Test
+    fun `WHEN init THEN the display size is a third of the size`() {
+        val asteroid = fixture<Asteroid>().copy(diameterInMeters = 33.3)
+        coEvery { repository.getAsteroidsToday() } returns listOf(asteroid)
+        initViewModel()
+
+        val captured = stateObserver.captured.first()
+        val capturedAsteroid = captured.asteroids.first()
+
+        Truth.assertThat(capturedAsteroid.displaySizeInDps).isEqualTo(11)
+    }
+
+    @Test
+    fun `WHEN init THEN has the expected miss distance`() {
+        val asteroid = fixture<Asteroid>().copy(missDistanceInKm = 33.33333)
+        coEvery { repository.getAsteroidsToday() } returns listOf(asteroid)
+        initViewModel()
+
+        val captured = stateObserver.captured.first()
+        val capturedAsteroid = captured.asteroids.first()
+
+        Truth.assertThat(capturedAsteroid.distance).isEqualTo("33.33km")
+    }
+
+    @Test
+    fun `WHEN init THEN the display distance if 1000000 smaller than the original`() {
+        val asteroid = fixture<Asteroid>().copy(missDistanceInKm = 3000000.0)
+        coEvery { repository.getAsteroidsToday() } returns listOf(asteroid)
+        initViewModel()
+
+        val captured = stateObserver.captured.first()
+        val capturedAsteroid = captured.asteroids.first()
+
+        Truth.assertThat(capturedAsteroid.displayDistanceInDps).isEqualTo(3)
+    }
+
+    @Test
+    fun `WHEN init THEN has the is dangerous`() {
+        val asteroid = fixture<Asteroid>().copy(isPotentiallyHazardousAsteroid = false)
+        coEvery { repository.getAsteroidsToday() } returns listOf(asteroid)
+        initViewModel()
+
+        val captured = stateObserver.captured.first()
+        val capturedAsteroid = captured.asteroids.first()
+
+        Truth.assertThat(capturedAsteroid.isDangerous).isFalse()
     }
 
     @Test

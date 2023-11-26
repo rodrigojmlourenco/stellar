@@ -47,7 +47,15 @@ class AsteroidFeedViewModel @Inject constructor(
     }
 
     private fun Asteroid.toUIModel(): AsteroidUIModel {
-        return AsteroidUIModel(this.id, this.name)
+        return AsteroidUIModel(
+            id = this.id,
+            name = this.name,
+            size = String.format("%.1fm", diameterInMeters),
+            displaySizeInDps = (this.diameterInMeters.toInt() / 3).takeIf { it > 0 } ?: 1,
+            distance = this.missDistanceInKm?.let { String.format("%.2fkm", missDistanceInKm) },
+            displayDistanceInDps = this.missDistanceInKm?.toInt()?.let { it / 1000000 } ?: 100,
+            isDangerous = this.isPotentiallyHazardousAsteroid
+        )
     }
 
     private fun List<Asteroid>.toUIModel(): List<AsteroidUIModel> {

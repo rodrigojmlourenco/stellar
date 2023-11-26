@@ -12,7 +12,8 @@
         app:defaultNavHost="true"
         android:paddingBottom="100dp"
         android:clipToPadding="false"
-        app:navGraph="@navigation/nav_home" />
+        app:navGraph="@navigation/nav_home"
+        android:layout_marginBottom="@dimen/m3_bottomappbar_height"/>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_app_bar"

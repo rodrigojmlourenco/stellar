@@ -15,8 +15,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
@@ -40,7 +38,7 @@ fun AsteroidFeedScreen(
 }
 
 @Composable
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
+@OptIn(ExperimentalLayoutApi::class)
 fun AsteroidFeedLayout(
     asteroids: List<AsteroidUIModel> = emptyList(),
     isLoading: Boolean = false,
@@ -50,11 +48,6 @@ fun AsteroidFeedLayout(
     val scope = rememberCoroutineScope()
 
     Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text("Simple Scaffold Screen") },
-            )
-        },
         snackbarHost = {
             SnackbarHost(hostState = snackbarHostState)
         },
@@ -99,7 +92,15 @@ fun AsteroidFeedLayout(
 fun PreviewAsteroidFeedLayout() {
     MaterialTheme {
         AsteroidFeedLayout(
-            listOf(AsteroidUIModel("1", "Asteroid A")),
+            listOf(AsteroidUIModel(
+                "1",
+                "Asteroid A",
+                "1m",
+                "1km",
+                1,
+                1,
+                false
+            )),
             false,
             "Oopsie daisy!"
         )

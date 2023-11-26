@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="watch_out_for_this_one">Watch out for this one!</string>
+    <string name="the_asteroid_is_x_km_away_from_the_earth">The asteroid is %s kilometers away from the earth.</string>
+    <string name="the_asteroid_is_at_an_unknown_distance_from_the_earth">The asteroid is at an unknown distance from the earth.</string>
+    <string name="nothing_to_worry_about">Nothing to worry about</string>
+</resources>
